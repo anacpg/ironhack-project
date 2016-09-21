@@ -1,7 +1,8 @@
 
 $(document).ready(function(){
 
-  buildMap();
+  //buildMap();
+  init();
   $('#js-btn-search').on('click', routesIndex);
 
 

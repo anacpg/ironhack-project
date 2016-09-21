@@ -1,38 +1,55 @@
+function buildMap(position){
 
-function buildMap(){
-  var map
+  var mapOptions =  {
+    center: position,
+    zoom: 14
+  };
 
-  if ("geolocation" in navigator){
-    navigator.geolocation.getCurrentPosition(onLocation, onError);
-  }
-
-  function onLocation(position){
-    // We can't just directly feed the position into our google map
-    // The objects are formatted differently, google maps is looking for
-    // an object with "lat" and "lng" keys.
-    var myPosition = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude
-    };
-
-    createMap(myPosition);
-  }
-
-  function createMap(position){
-    var mapOptions =  {
-      center: position,
-      zoom: 15
-    };
-
-    map = new google.maps.Map($('#map')[0],mapOptions);
-    //createMarker(flightPlanCoordinates[0]);
-    //setupAutocomplete();
-  }
-
-  function onError(err){
-    console.log("What are you using, IE 7??", err);
-  }
+  window.map = new google.maps.Map($('#map')[0],mapOptions);
+  //createMarker(flightPlanCoordinates[0]);
+  //setupAutocomplete();
 }
+
+
+
+
+//
+//
+// function buildMap(){
+//
+//
+//   if ("geolocation" in navigator){
+//     navigator.geolocation.getCurrentPosition(onLocation, onError);
+//   }
+//
+//   function onLocation(position){
+//     // We can't just directly feed the position into our google map
+//     // The objects are formatted differently, google maps is looking for
+//     // an object with "lat" and "lng" keys.
+//     var myPosition = {
+//       lat: position.coords.latitude,
+//       lng: position.coords.longitude
+//     };
+//
+//     createMap(myPosition);
+//   }
+//
+//   function createMap(position){
+//
+//     var mapOptions =  {
+//       center: position,
+//       zoom: 14
+//     };
+//
+//     window.map = new google.maps.Map($('#map')[0],mapOptions);
+//     //createMarker(flightPlanCoordinates[0]);
+//     //setupAutocomplete();
+//   }
+//
+//   function onError(err){
+//     console.log("What are you using, IE 7??", err);
+//   }
+// }
 
 
 
