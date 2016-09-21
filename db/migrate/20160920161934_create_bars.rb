@@ -4,8 +4,8 @@ class CreateBars < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :description
       t.string :image
-      t.decimal :lat, {precision: 15, scale: 11}
-      t.decimal :lng, {precision: 15, scale: 11}
+      t.decimal :lat
+      t.decimal :lng
       t.references :route, foreign_key: true
 
       t.timestamps

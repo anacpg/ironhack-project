@@ -1,7 +1,6 @@
 
 function buildMap(){
-  var aux = $('#map')[0]
-  var map;
+  var map
 
   if ("geolocation" in navigator){
     navigator.geolocation.getCurrentPosition(onLocation, onError);
@@ -33,13 +32,12 @@ function buildMap(){
   function onError(err){
     console.log("What are you using, IE 7??", err);
   }
-
 }
 
 
 
 
-// 
+//
 //
 // $(document).ready(function(){
 //

@@ -10,26 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920143338) do
+ActiveRecord::Schema.define(version: 20160921095513) do
 
   create_table "bars", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "image"
-    t.decimal  "lat",         precision: 15, scale: 11
-    t.decimal  "lng",         precision: 15, scale: 11
+    t.decimal  "lat"
+    t.decimal  "lng"
     t.integer  "route_id"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "neighborhood_id"
+    t.index ["neighborhood_id"], name: "index_bars_on_neighborhood_id"
     t.index ["route_id"], name: "index_bars_on_route_id"
+  end
+
+  create_table "neighborhoods", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "lat",        precision: 15, scale: 11
+    t.decimal  "lng",        precision: 15, scale: 11
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "routes", force: :cascade do |t|
     t.string   "name"
-    t.string   "neighborhood"
-    t.integer  "score",        default: 0
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "score",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

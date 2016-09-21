@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  neighborhood: one
-  score: 1
+  lat: 9.99
+  lng: 9.99
 
 two:
   name: MyString
-  neighborhood: two
-  score: 1
+  lat: 9.99
+  lng: 9.99
