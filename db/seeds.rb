@@ -14,7 +14,7 @@ neighborhoods = Neighborhood.create([
   {name: 'barajas', lat:40.4653704, lng:-3.5951517999999396},
   {name: 'san-blas', lat:40.4321838, lng:-3.627880399999981},
   {name: 'moratalaz', lat:40.4072203, lng:-3.6570054999999684},
-  {name: 'vicalvaro', lat:40.3940279, lng:40.3940279},
+  {name: 'vicalvaro', lat:40.3940279, lng:-3.602876100000003},
   {name: 'puente-vallecas', lat:40.3870042,lng:-3.6695333999999775},
   {name: 'villa-vallecas', lat:40.3669555, lng:-3.6060640000000603},
   {name: 'villaverde', lat:40.3469109, lng:-3.7107845000000452},
@@ -30,6 +30,10 @@ neighborhoods = Neighborhood.create([
   {name: 'latina', lat:41.4675671, lng:12.903596500000049}
   ])
 
+route = Route.create([
+    {name: 'Madrid Route', score: 5},
+    {name: 'Route 2', score: 5}
+    ])
 
 bars = Bar.create([
   {name: 'Bar1', description:'Descr1',
@@ -40,12 +44,20 @@ bars = Bar.create([
   lat: 40.44276659332215, lng: -3.71063232421875, route_id: 1, neighborhood_id: 16},
   {name: 'Bar3', description:'Descr3',
   image: 'http://madrideluxe.com/wp-content/uploads/2014/07/EMG_CA_Platea_17062014_H9A6455-930x620.jpg',
-  lat: 40.44439961890733, lng: -3.6938095092773438, route_id: 1, neighborhood_id: 16},
+  lat: 40.44439961890733, lng: -3.6938095092773438, route_id: 1, neighborhood_id: 15},
   {name: 'Bar4', description:'Descr4',
   image: 'http://madrideluxe.com/wp-content/uploads/2014/07/EMG_CA_Platea_17062014_H9A6455-930x620.jpg',
-  lat: 40.44694705960048, lng: -3.7009334564208984, route_id: 1, neighborhood_id: 16}
+  lat: 40.44694705960048, lng: -3.7009334564208984, route_id: 1, neighborhood_id: 16},
+  {name: 'Bar5', description:'Descr5',
+  image: 'http://madrideluxe.com/wp-content/uploads/2014/07/EMG_CA_Platea_17062014_H9A6455-930x620.jpg',
+  lat: 40.44694705960048, lng: -3.708057403564453, route_id: 2, neighborhood_id: 16},
+  {name: 'Bar6', description:'Descr6',
+  image: 'http://madrideluxe.com/wp-content/uploads/2014/07/EMG_CA_Platea_17062014_H9A6455-930x620.jpg',
+  lat: 40.441133528064015, lng: -3.700590133666992, route_id: 2, neighborhood_id: 16},
+  {name: 'Bar7', description:'Descr7',
+  image: 'http://madrideluxe.com/wp-content/uploads/2014/07/EMG_CA_Platea_17062014_H9A6455-930x620.jpg',
+  lat: 40.444007696385064, lng: -3.6928653717041016, route_id: 2, neighborhood_id: 16}
   ])
+
+
 #
-# route = Route.create([
-#   {name: 'Madrid Center Route', neighborhood: 'Centro', score: 5}
-#   ])

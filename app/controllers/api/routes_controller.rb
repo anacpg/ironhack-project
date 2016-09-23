@@ -14,5 +14,15 @@ class Api::RoutesController < ApplicationController
   def show
   end
 
+  def create
+    route = Route.new('name',0)
+    route.save()
+    render json: route, status: 201
+  end
 
+
+  private
+    def route_params
+      params.require(:route).permit(:name)
+    end
 end

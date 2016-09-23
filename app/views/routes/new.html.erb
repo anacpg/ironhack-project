@@ -1,0 +1,59 @@
+<%= render '/layouts/nav'%>
+
+
+
+<div class="container-fluid main">
+  <div> <h1>Crear Ruta</h1></div>
+
+  <div class="col-sm-6 js-create-route" style="padding:0px">
+    <%= form_tag({}, { :class => "route-form", "data-hook" => "neighborhood-form" }) do %>
+      <%= label_tag(:route_name, "Route name:") %>
+      <input type="text" name="route-name" id="js-route-name">
+      <button class="btn btn-default" id="btn-create-route" type="submit">Create Route</button>
+    <% end %>
+
+    <div class="padding_null col-sm-2">
+      <div class="mygrid-wrapper-div" id="js-bar-list">
+
+      </div><!--/.well -->
+    </div>
+
+  </div>
+  <div class="container-fluid">
+
+    <div class="col-sm-6 js-create-bar" style="background-color:aliceblue">
+      <div class="js-bar-form">
+
+        <%= form_tag("/create", method: "post") do %>
+          <br>
+          <%= label_tag(:bar_, "Bar name:") %>
+          <input type="text" name="bar-name" id="js-bar-name">
+          <br>
+          <%= label_tag(:bar_description, "Bar description:") %>
+          <input type="text" name="bar_description" id="js-bar-description">
+          <br>
+          <select name="neighborhood-list" form="neighborhoods-form" class="neighborhoods-form" >
+            <% @neighborhoods.each do |neighborhood| %>
+            <option value='<%= neighborhood.name %>' ><%= neighborhood.name%></option>
+            <% end%>
+          </select>
+          <br>
+          <br>
+
+          <button class="btn btn-default" id="btn-add-bar" type="submit">Create Route</button>
+        <% end %>
+      </div>
+
+      <div id="map">  </div>
+
+
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+<%= render '/layouts/footer'%>
