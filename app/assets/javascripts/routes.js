@@ -16,11 +16,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 function initShowRoutes(neighborhood){
-  //RequestsAPI.searchNeighborhoods(neighborhood).then(createMap);
+  RequestsAPI.searchNeighborhoods(neighborhood).then(createMap);
+  RequestsAPI.searchBars(neighborhood).then(drawMarkers);
+  RequestsAPI.searchRoutes(neighborhood).then(showRoutesHtml);
 
-  request.requestNeighborhoods(neighborhood);
-  request.requestBars(neighborhood);
-  request.requestRoutes(neighborhood);
+  //request.requestNeighborhoods(neighborhood);
+  //request.requestBars(neighborhood);
+  //request.requestRoutes(neighborhood);
 
   var $neighborhood = document.getElementsByClassName('neighborhoods-form')[0];
   $neighborhood.getElementsByTagName('select')[0].value = neighborhood;
@@ -43,7 +45,8 @@ function showRoutes(event) {
   var route_id = event.target.getAttribute('route-id');
 
   deleteMarkers();
-  request.requestBarRoute(route_id);
+  RequestsAPI.searchBarRoute(route_id).then(drawRouteMap);
+  //request.requestBarRoute(route_id);
   updateZoom(14);
 }
 
@@ -53,7 +56,8 @@ function showBar(event) {
   deleteMarkers();
   deletedPopyline();
 
-  request.requestBar(bar_id);
+  RequestsAPI.searchBar(bar_id).then(drawMarkers);
+//  request.requestBar(bar_id);
   updateZoom(16);
   // changeColorMarker();
 }
