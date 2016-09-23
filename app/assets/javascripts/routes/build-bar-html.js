@@ -1,5 +1,6 @@
 function buildBarHtml(bar) {
   // add --> buildImage(bar)
+ 
   return `<li> ${buildLink(bar)} <br> </li>`
 }
 

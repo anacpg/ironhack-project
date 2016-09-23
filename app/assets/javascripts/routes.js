@@ -16,47 +16,44 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 function initShowRoutes(neighborhood){
+  //RequestsAPI.searchNeighborhoods(neighborhood).then(createMap);
+
   request.requestNeighborhoods(neighborhood);
   request.requestBars(neighborhood);
   request.requestRoutes(neighborhood);
 
   var $neighborhood = document.getElementsByClassName('neighborhoods-form')[0];
-  $neighborhood.getElementsByTagName('select')[0].value = neighborhood
+  $neighborhood.getElementsByTagName('select')[0].value = neighborhood;
 
 }
 
 function searchNeighborhood(event){
   event.preventDefault();
-  console.log('event',event);
+  var $neighborhood = document.getElementsByClassName('neighborhoods-form')[0];
+  var neighborhood = $neighborhood.getElementsByTagName('select')[0].value;
 
-  neighborhood = $('.neighborhoods-form').children('select').val();
+  document.getElementById('js-bar-list').classList.add('hidden');
+  document.getElementById('js-route-list').classList.add('hidden');
 
-  $('#js-bar-list').addClass('hidden');
-  $('#js-route-list').addClass('hidden');
-  initShowRoutes(neighborhood)
+  initShowRoutes(neighborhood);
 }
 
-// document.getElementById("div1")
-//   .classList.add("otherclass");
-
 function showRoutes(event) {
-  route_id = $(event.target).attr('route-id');
   event.preventDefault();
-  deleteMarkers();
+  var route_id = event.target.getAttribute('route-id');
 
+  deleteMarkers();
   request.requestBarRoute(route_id);
   updateZoom(14);
-
 }
 
 function showBar(event) {
-  bar_id = $(event.target).attr('bar-id');
   event.preventDefault();
+  var bar_id = event.target.getAttribute('bar-id');
   deleteMarkers();
   deletedPopyline();
 
   request.requestBar(bar_id);
   updateZoom(16);
   // changeColorMarker();
-
 }

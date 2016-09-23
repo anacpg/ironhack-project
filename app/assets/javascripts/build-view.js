@@ -1,14 +1,15 @@
 function showRoutesHtml(routes){
-  var $routesSection = $('#js-route-list');
-  var html
+  var html = '';
+  var routesSection = document.getElementById('js-route-list');
 
   if (routes.length === 0){
-    $routesSection.addClass('hidden')
+    routesSection.classList.add('hidden');
   }else{
-    $routesSection.removeClass('hidden')
+    routesSection.classList.remove('hidden');
     html = buildRouteListHtml(routes);
   }
-  $routesSection.append(html);
+  routesSection.insertAdjacentHTML('beforeend', html);
+  //$routesSection.append(html);
 }
 
 function showError(err){
@@ -17,7 +18,6 @@ function showError(err){
 
 function drawRouteMap(response){
   var path = []
-  console.log('drawRouteMap',response);
   for(var i=0,  length = response.length; i<length; i++){
     path.push({lat: parseFloat(response[i]['lat']), lng: parseFloat(response[i]['lng'] )})
   }
@@ -27,18 +27,16 @@ function drawRouteMap(response){
   showBarsHTML(response);
 }
 
-
 function showBarsHTML(bars){
-  var $barsSection = $('#js-bar-list');
-  $barsSection.removeClass('hidden')
-  var html
+  var html = '';
+  var barsSection = document.getElementById('js-bar-list');
+
+  barsSection.classList.remove('hidden');
 
   if (bars.length === 0){
     console.log('No hay bares');
   }else{
     html = buildBarListHtml(bars);
   }
-  $barsSection.append(html);
-  //console.log($($('.js-bar-img')[0]).attr('src', 'images/bar1.jpg'));
-  // $('.js-bar-img')[0].attr('src', '/images/bar1.jpg')
+  barsSection.insertAdjacentHTML('beforeend', html);
 }
