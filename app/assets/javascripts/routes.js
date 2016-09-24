@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
   if (window.location.pathname == "/routes"){
-    request = new requestAPI() ;
+    // request = new requestAPI() ;
     initShowRoutes('tetuan');
 
     var routeList = document.getElementById("js-route-list");
@@ -19,10 +19,6 @@ function initShowRoutes(neighborhood){
   RequestsAPI.searchNeighborhoods(neighborhood).then(createMap);
   RequestsAPI.searchBars(neighborhood).then(drawMarkers);
   RequestsAPI.searchRoutes(neighborhood).then(showRoutesHtml);
-
-  //request.requestNeighborhoods(neighborhood);
-  //request.requestBars(neighborhood);
-  //request.requestRoutes(neighborhood);
 
   var $neighborhood = document.getElementsByClassName('neighborhoods-form')[0];
   $neighborhood.getElementsByTagName('select')[0].value = neighborhood;
@@ -57,7 +53,6 @@ function showBar(event) {
   deletedPopyline();
 
   RequestsAPI.searchBar(bar_id).then(drawMarkers);
-//  request.requestBar(bar_id);
   updateZoom(16);
   // changeColorMarker();
 }

@@ -15,9 +15,8 @@ class Api::RoutesController < ApplicationController
   end
 
   def create
-    route = Route.new('name',0)
-    route.save()
-    render json: route, status: 201
+    route = Route.create(route_params)
+    render json: route, status: 200
   end
 
 

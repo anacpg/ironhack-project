@@ -23,7 +23,6 @@ function generateLocation(area){
 }
 
 function geolocation(){
-  console.log('paso por aqui');
   if ("geolocation" in navigator){
     navigator.geolocation.getCurrentPosition(onLocation, onError);
   }
@@ -36,7 +35,6 @@ function geolocation(){
       lat: position.coords.latitude,
       lng: position.coords.longitude
     };
-    console.log(myPosition);
     createMap(myPosition);
   }
 

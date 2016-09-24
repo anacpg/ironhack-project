@@ -27,6 +27,11 @@ RequestsAPI = function (){
     return _proxy('GET', query, 'json' );
   }
 
+  _createRoute = function(route_name) {
+    let query = URL_API + 'routes/create';
+    let params =  {route: {name: route_name}}
+    return _proxy('POST', query, 'json', params);
+  }
 
   _proxy = function(method, url, responseType, params) {
     return new Promise(function(resolve, reject) {
@@ -59,6 +64,7 @@ RequestsAPI = function (){
     searchRoutes : _searchRoutes,
     searchBars : _searchBars,
     searchBarRoute : _searchBarRoute,
-    searchBar : _searchBar
+    searchBar : _searchBar,
+    createRoute : _createRoute
   }
 }();

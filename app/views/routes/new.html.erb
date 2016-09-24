@@ -3,15 +3,17 @@
 
 
 <div class="container-fluid main">
-  <div> <h1>Crear Ruta</h1></div>
 
   <div class="col-sm-6 js-create-route" style="padding:0px">
-    <%= form_tag({}, { :class => "route-form", "data-hook" => "neighborhood-form" }) do %>
-      <%= label_tag(:route_name, "Route name:") %>
-      <input type="text" name="route-name" id="js-route-name">
-      <button class="btn btn-default" id="btn-create-route" type="submit">Create Route</button>
-    <% end %>
-
+    <div class="div-create-route">
+      <h1>Crear Ruta</h1>
+      <%= form_tag({}, { :class => "route-form", "data-hook" => "neighborhood-form" }) do %>
+        <%= label_tag(:name, "Route name:") %>
+        <input type="text" name="name" id="js-route-name">
+        <button class="btn btn-default" id="btn-create-route" type="submit">Create Route</button>
+      <% end %>
+    </div>
+    <div><h1 class="route-name" id-route=""></h1></div>
     <div class="padding_null col-sm-2">
       <div class="mygrid-wrapper-div" id="js-bar-list">
 
