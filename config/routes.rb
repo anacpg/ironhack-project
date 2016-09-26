@@ -10,8 +10,9 @@ Rails.application.routes.draw do
     get '/neighborhoods/:name', to: 'neighborhoods#show'
     get '/neighborhoods/:neighborhood/routes', to: 'routes#index'
     get '/neighborhoods/:neighborhood/bars', to: 'bars#index'
-    get '/routes/:id/bars', to: 'bars#bars_route'
     post '/routes/create', to: 'routes#create'
+    get '/routes/:id/bars', to: 'bars#bars_route'
+    post '/routes/:id/bars/create', to: 'bars#create'
     get 'bars/:id', to: 'bars#show'
     # resources :routes do
     #   resources :bars

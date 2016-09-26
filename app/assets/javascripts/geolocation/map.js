@@ -2,17 +2,19 @@ function createMap(position){
 //  var position = {lat: parseFloat(area.lat), lng: parseFloat(area.lng)}
   var position = generateLocation(position)
   buildMap(position)
-
+  console.log('paso por aqui');
   function buildMap(position){
-
     var mapOptions =  {
       center: position,
       zoom: 14
     };
-
-    window.map = new google.maps.Map($('#map')[0],mapOptions);
-    window.markers = []
-    window.flightPath
+    var div_map = document.getElementById('map')
+    window.map = new google.maps.Map(div_map, mapOptions);
+    window.markers = [];
+    window.flightPath;
+    window.bounds = new google.maps.LatLngBounds();
+    window.geocoder = new google.maps.Geocoder;
+    clickOnMap();
 
   }
 }
@@ -28,6 +30,7 @@ function geolocation(){
   }
 
   function onLocation(position){
+
   // We can't just directly feed the position into our google map
   // The objects are formatted differently, google maps is looking for
   // an object with "lat" and "lng" keys.
@@ -41,4 +44,68 @@ function geolocation(){
   function onError(err){
     console.log("What are you using, IE 7??", err);
   }
+}
+
+function setupAutocomplete(){
+  var input = document.getElementById('js-search-bar');
+
+  var options = {
+    // types: ['neighborhood'],
+    componentRestrictions: {country:'es'}
+  };
+
+  var autocomplete = new google.maps.places.Autocomplete(input, options);
+  autocomplete.addListener('place_changed', function(){
+    var place = autocomplete.getPlace();
+    var location = place.geometry.location;
+    //console.log('locacion autocomplete',location);
+    getDistrict(location);
+
+    if (location) {
+      map.setCenter(place.geometry.location);
+      map.setZoom(16);
+      var myLatLng = new google.maps.LatLng(location.lat(),location.lng());
+      createMarker(myLatLng);
+      //drawRoute(flightPlanCoordinates)
+    } else {
+      alert("The place has no location...?")
+    }
+
+
+  });
+}
+
+function clickOnMap(){
+  if (window.location.pathname == "/routes/new"){
+    map.addListener('click',function(e){
+      deleteMarkers();
+      //map.setZoom(16);
+      bounds = new google.maps.LatLngBounds();
+      createMarker(e.latLng);
+      getDistrict(e.latLng);
+      //map.setZoom(16);
+    });
+    console.log('markers', markers);
+  }
+}
+
+function getDistrict(location){
+
+  geocoder.geocode({'location': location}, function(results, status) {
+    var index_results ;
+    console.log('results', results);
+
+
+    results.length < 11 ? index_results = 2 : index_results = 3;
+    var address = results[index_results].formatted_address;
+    var district = address.split(',')[0]
+    if (district === 'Madrid' ){
+      var address = results[2].formatted_address;
+      var district = address.split(',')[0]
+    }
+
+    var $neighborhood = document.getElementsByClassName('neighborhoods-form')[0];
+    $neighborhood.getElementsByTagName('select')[0].value = 1;
+    document.getElementById('js-district').value = district.toLowerCase();
+  })
 }

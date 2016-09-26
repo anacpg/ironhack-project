@@ -16,7 +16,11 @@ class Api::RoutesController < ApplicationController
 
   def create
     route = Route.create(route_params)
-    render json: route, status: 200
+    unless route.valid?
+      render json: {error: "The name already exist "}, status: 404
+      return 
+    end
+    render json: route
   end
 
 

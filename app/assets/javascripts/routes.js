@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
   if (window.location.pathname == "/routes"){
     // request = new requestAPI() ;
-    initShowRoutes('tetuan');
+    initShowRoutes('tetuán');
 
     var routeList = document.getElementById("js-route-list");
     var barList = document.getElementById("js-bar-list");

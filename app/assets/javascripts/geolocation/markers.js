@@ -1,13 +1,17 @@
 function drawMarkers(path){
   bounds = new google.maps.LatLngBounds();
-  path.map(createMarker);
+  console.log('bounds', bounds);
+  path.map(function (position){
+    var myLatLng = new google.maps.LatLng(position['lat'],position['lng']);
+    createMarker(myLatLng);
+  })
+
   if (path.length > 0)  map.setCenter(bounds.getCenter());
 }
 
 
-function createMarker(bar) {
-  //changeIcon will be true if marker is the selected bar
-  var myLatLng = new google.maps.LatLng(bar['lat'],bar['lng']);
+
+function createMarker(myLatLng) {
   map.setCenter();
   bounds.extend( myLatLng);
   var marker = new google.maps.Marker({
@@ -17,6 +21,7 @@ function createMarker(bar) {
   //add markers to markers array
   markers.push(marker);
   marker.setMap(map);
+  setAnimationMarker(marker);
 }
 
 function deleteMarkers() {
@@ -40,4 +45,18 @@ function changeColorMarker(){
 
 function updateZoom(zoom){
   map.setZoom(zoom);
+}
+
+
+
+function setAnimationMarker(marker) {
+
+  var responseURL;
+  if (event != undefined) responseURL = event.target['responseURL'];
+
+  if (responseURL != undefined && responseURL.split('/')[4] === "routes"){
+    marker.setAnimation(null);
+  }else {
+    marker.setAnimation(google.maps.Animation.DROP);
+  }
 }
