@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function(){
     // request = new requestAPI() ;
     initShowRoutes('tetuán');
 
-    var routeList = document.getElementById("js-route-list");
+    var routeList = document.getElementsByClassName("js-route-list")[0];
     var barList = document.getElementById("js-bar-list");
 
     document.getElementById("js-btn-search")
@@ -17,13 +17,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 function initShowRoutes(neighborhood){
+  var neig_capitalize = neighborhood.charAt(0).toUpperCase() + neighborhood.slice(1);
+  document.getElementById('js-h-route').innerText = `${neig_capitalize} routes`;
   RequestsAPI.searchNeighborhoods(neighborhood).then(createMap);
   var respuesta = RequestsAPI.searchBars(neighborhood).then(drawMarkers);
   RequestsAPI.searchRoutes(neighborhood).then(showRoutesHtml);
 
   var $neighborhood = document.getElementsByClassName('neighborhoods-form')[0];
   $neighborhood.value = neighborhood;
-
 }
 
 function searchNeighborhood(event){
@@ -39,7 +40,8 @@ function searchNeighborhood(event){
 
 function showRoutes(event) {
   event.preventDefault();
-  var route_id = event.target.getAttribute('route-id');
+  var route_id = event.target.getAttribute('id');
+  console.log('showRoutes route_id', route_id);
 
   deleteMarkers();
   RequestsAPI.searchBarRoute(route_id).then(drawRouteMap);

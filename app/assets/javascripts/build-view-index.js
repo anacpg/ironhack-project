@@ -1,6 +1,7 @@
 function showRoutesHtml(routes){
   var html = '';
-  var routesSection = document.getElementById('js-route-list');
+  // var routesSection = document.getElementById('js-route-list');
+  var routesSection = document.getElementById('accordion');
 
   if (routes.length === 0){
     routesSection.classList.add('hidden');
@@ -8,7 +9,8 @@ function showRoutesHtml(routes){
     routesSection.classList.remove('hidden');
     html = buildRouteListHtml(routes);
   }
-  routesSection.insertAdjacentHTML('beforeend', html);
+  routesSection.innerHTML = html;
+  // routesSection.insertAdjacentHTML('beforeend', html);
   //$routesSection.append(html);
 }
 
@@ -29,14 +31,15 @@ function drawRouteMap(response){
 
 function showBarsHTML(bars){
   var html = '';
-  var barsSection = document.getElementById('js-bar-list');
+  var route = `js-panel-${bars[0]['route_id']}`;
+  var barsSection = document.getElementById(route);
 
-  barsSection.classList.remove('hidden');
-
+  // barsSection.classList.remove('hidden');
   if (bars.length === 0){
     console.log('No hay bares');
   }else{
     html = buildBarListHtml(bars);
   }
-  barsSection.insertAdjacentHTML('beforeend', html);
+  // barsSection.insertAdjacentHTML('beforeend', html);
+  barsSection.innerHTML = html;
 }

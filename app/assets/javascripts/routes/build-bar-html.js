@@ -9,8 +9,9 @@ function buildBarDescriptionHtml(bar) {
 
 
 function buildLink(bar) {
-  return `<a href="${bar.name}" class="js-bar-li"
-          bar-id=" ${bar.id}"> ${bar.name} </a>`
+  return `<h5> ${bar.name}</h5>`
+    // `<a href="${bar.name}" class="js-bar-li"
+  //         bar-id=" ${bar.id}"> ${bar.name} </a>`
 }
 
 function buildImage(bar) {
