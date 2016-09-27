@@ -12,12 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require animate
  */
- /*@import "bootstrap-sprockets";
- @import "bootstrap";*/
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@import "bootswatch/cerulean/variables";
-@import "bootswatch/cerulean/bootswatch";
+@import "bootswatch/readable/variables";
+@import "bootswatch/readable/bootswatch";
+
+@import 'https://fonts.googleapis.com/css?family=Comfortaa:700';

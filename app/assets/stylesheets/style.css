@@ -1,17 +1,39 @@
 #map {
-  height: 75vh;
+  height: 85vh;
   width: 100%;
+}
+a {
+  text-decoration: none;
+}
+
+.left{
+  float: left;
+}
+
+.brand {
+    color: #333;
+    font-size: 30px;
+    font-weight: 700;
+    float: left;
+    padding: 10px 15px;
+}
+
+.logo {
+  font-family: 'Comfortaa', cursive;
+  font-size: 24px;
+  color: white;
 }
 
 .padding_null{
-  padding-right: 0px;
-padding-left: 0px;
+  padding: 0px !important;
 }
-.nav_top {
-  background-color: #F1F1F1;
-  position: absolute;
-  width: 100%;
-  font-size: 13px;
+
+.margin_null{
+  margin: 2px !important;
+}
+
+.color-nav {
+  background-color: #f15c5c !important;
 }
 
 
@@ -31,12 +53,16 @@ padding-left: 0px;
     height: 200px;
 }
 
+.ul-height{
+  height: 85vh !important;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 25%;
-    background-color: #f1f1f1;
+    background-color: #d6ecfa;
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -59,7 +85,9 @@ li a:hover:not(.active) {
     color: white;
 }
 
-
+.ul-new-bar{
+  width: 40%;
+}
 .footer {
     position: absolute;
     bottom: 0;
@@ -68,7 +96,29 @@ li a:hover:not(.active) {
     background-color: grey;
 }
 
-/*.center {
+.center {
   margin: 0 auto;
   display: table;
-}*/
+}
+
+.margin-center {
+  margin-top: 100px;
+}
+
+.form-create-route{
+  background-color: #d6ecfa;
+  padding: 50px;
+  margin: 50px;
+}
+
+.input-text{
+  width:280px !important;
+}
+
+input, button, textarea{
+  border-radius: 4px !important;
+}
+
+.button{
+  background-color: #d6ecfa
+}

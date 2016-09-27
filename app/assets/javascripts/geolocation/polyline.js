@@ -5,7 +5,7 @@ function drawRoute(path){
   walkPath = new google.maps.Polyline({
     path: path,
     geodesic: true,
-    strokeColor: '#FF0000',
+    strokeColor: '#f1404b',
     strokeOpacity: 1.0,
     strokeWeight: 2
   });

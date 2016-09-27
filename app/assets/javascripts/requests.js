@@ -29,8 +29,9 @@ RequestsAPI = function (){
 
   _createRoute = function(route_name) {
     let query = URL_API + 'routes/create';
-    let params =  {route: {name: route_name}}
-    return _proxy('POST', query, 'json', params);
+    var params =  {route: {name: route_name}}
+    return _proxy('POST', query, 'json', JSON.stringify(params))
+        .then(newRoute).catch(errorNewRoute);
   }
 
   _proxy = function(method, url, responseType, params) {
@@ -41,9 +42,11 @@ RequestsAPI = function (){
       xhr.withCredentials = false;
       xhr.responseType = responseType;
 
+      //si es post -> indicar en la cabecera el tipo de los datos enviados
+      if (method === "POST")
+        xhr.setRequestHeader("Content-type", "application/json");
+
       xhr.onload = function() {
-        console.log('url', url);
-        console.log('status',xhr.status);
         if (xhr.status === 200){
           resolve(xhr.response);
         } else {

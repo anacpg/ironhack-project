@@ -1,0 +1,26 @@
+<form class="form-horizontal ">
+  <fieldset>
+    <legend>Create your route</legend>
+    <div class="form-group js-form-route">
+      <div class="col-lg-10 ">
+        <label class="control-label">Name route:</label>
+        <div class="input-group">
+          <input type="text" class="form-control js-route-name input-text
+              animated" id="focusedInput"  placeholder="Name route" >
+          <span class="input-group-btn" style="padding-left:20px !important">
+            <button id="btn-create-route" type="submit" class="btn btn-default"
+              style="background-color:#d9e1e8">Save</button>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="alert alert-dismissible alert-danger hidden" id="js-name-error">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong class="js-error-text">The route already exists</strong>
+    </div>
+  </fieldset>
+</form>

@@ -4,5 +4,5 @@ function buildRouteListHtml(routes){
       return prev + buildRouteHtml(route);
     }, '');
 
-  return '<ul class="js-ul-routes">' + listItems + '</ul>'
+  return '<ul class="js-ul-routes ul-height">' + listItems + '</ul>'
 }

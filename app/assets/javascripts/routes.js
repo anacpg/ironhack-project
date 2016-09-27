@@ -15,20 +15,21 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 
+
 function initShowRoutes(neighborhood){
   RequestsAPI.searchNeighborhoods(neighborhood).then(createMap);
-  RequestsAPI.searchBars(neighborhood).then(drawMarkers);
+  var respuesta = RequestsAPI.searchBars(neighborhood).then(drawMarkers);
   RequestsAPI.searchRoutes(neighborhood).then(showRoutesHtml);
 
   var $neighborhood = document.getElementsByClassName('neighborhoods-form')[0];
-  $neighborhood.getElementsByTagName('select')[0].value = neighborhood;
+  $neighborhood.value = neighborhood;
 
 }
 
 function searchNeighborhood(event){
   event.preventDefault();
   var $neighborhood = document.getElementsByClassName('neighborhoods-form')[0];
-  var neighborhood = $neighborhood.getElementsByTagName('select')[0].value;
+  var neighborhood = $neighborhood.value;
 
   document.getElementById('js-bar-list').classList.add('hidden');
   document.getElementById('js-route-list').classList.add('hidden');

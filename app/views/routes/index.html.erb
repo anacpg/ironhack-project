@@ -1,49 +1,25 @@
-<%= render '/layouts/nav'%>
+<%= render :partial => "nav", :locals => {:neighborhoods => @neighborhoods} %>
 
-<div class="container-fluid main">
+<div class="container-fluid main padding_null">
   <div class="row">
-    <div id="input-wrapper">
-      <%= form_tag({}, { :class => "neighborhoods-form", "data-hook" => "neighborhoods-form" }) do %>
-
-        <div data-hook="form-alerts"></div>
-
-        <select name="neighborhood-list" form="neighborhoods-form" class="neighborhoods-form" >
-          <% @neighborhoods.each do |neighborhood| %>
-          <option value='<%= neighborhood.name %>' ><%= neighborhood.name%></option>
-          <% end%>
-        </select>
-        <button class="btn btn-default" id="js-btn-search" type="submit">Search</button>
-      <% end%>
-
-      <!-- <select name="neighborhood-list" form="district-Madrid-form" class="district-Madrid-form">
-        <% @neighborhoods.each do |neighborhood| %>
-        <option value='<%= neighborhood.id %>' ><%= neighborhood.name%></option>
-        <% end%>
-      </select>
-      <button class="btn btn-default" id="js-btn-search" type="submit">Search</button> -->
+    <div class="col-sm-6 padding_null" style="padding:0px padding-right:5px">
+      <div id="map">  </div>
     </div>
+    <div class="col-sm-6 padding_null">
+      <div class="col-sm-6 padding_null">
+        <div class="mygrid-wrapper-div panel-default " id="js-route-list">
 
-
-  </div>
-  <div class="col-sm-6 padding_null" style="padding:0px">
-    <div id="map">  </div>
-  </div>
-  <div class="padding_null col-sm-2" style="padding:0px">
-    <div class="mygrid-wrapper-div" id="js-route-list">
-
-    </div><!--/.well -->
-  </div>
-  <div class="col-xs-1 col-sm-1 sidebar-offcanvas" id="sidebar" role="navigation"   style="float:left">
-    <div class="mygrid-wrapper-div" id="js-bar-list">
+        </div><!--/.well -->
+      </div>
+      <div class="col-xs-1 col-sm-6 sidebar-offcanvas padding_null" id="sidebar"
+       role="navigation"   style="float:left">
+        <div class="mygrid-wrapper-div" id="js-bar-list">
+        </div>
+        
     </div>
-  </div><!--/span-->
-
-
-
-
-
- </div><!--/row-->
-
- <%= render '/layouts/footer'%>
+    </div><!--/span-->
+  </div><!--/row-->
+<!--
+ <%= render '/layouts/footer'%> -->
 
 </div>

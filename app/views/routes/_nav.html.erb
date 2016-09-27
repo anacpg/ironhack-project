@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default margin_null color-nav">
+  <div class="container-fluid">
+    <div class="col-sm-1 padding_null" style="padding:0px padding-right:5px">
+      <a class="brand text-white logo" href="/">bRoutes</a>
+    </div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+
+    <div class="col-sm-5 padding_null" style="padding:0px padding-right:5px">
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <form class="navbar-form navbar-left" role="search">
+          <%= render :partial => "select_district", :locals => {:neighborhoods => neighborhoods} %>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</nav>

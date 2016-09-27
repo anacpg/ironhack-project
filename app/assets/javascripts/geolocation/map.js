@@ -70,8 +70,6 @@ function setupAutocomplete(){
     } else {
       alert("The place has no location...?")
     }
-
-
   });
 }
 
@@ -94,18 +92,20 @@ function getDistrict(location){
   geocoder.geocode({'location': location}, function(results, status) {
     var index_results ;
     console.log('results', results);
-
-
-    results.length < 11 ? index_results = 2 : index_results = 3;
+    var index_results = results.length - 8
     var address = results[index_results].formatted_address;
-    var district = address.split(',')[0]
+    var district = address.split(',')[0];
     if (district === 'Madrid' ){
-      var address = results[2].formatted_address;
-      var district = address.split(',')[0]
+      var address = results[index_results-1].formatted_address;
+      var district = address.split(',')[0];
     }
 
-    var $neighborhood = document.getElementsByClassName('neighborhoods-form')[0];
-    $neighborhood.getElementsByTagName('select')[0].value = 1;
-    document.getElementById('js-district').value = district.toLowerCase();
+    var district_id = document.getElementById(district.toLowerCase()).value;
+    //console.log($neighborhood.value);
+    var $neighborhood = document.getElementsByClassName('form-districts-bar')
+    console.log('neig', $neighborhood[0].value);
+    $neighborhood[0].value = parseInt(district_id);
+    //$neighborhood.getElementsByTagName('select')[0].value = 1;
+    //$neighborhood.value = district.toLowerCase();
   })
 }

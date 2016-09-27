@@ -1,0 +1,8 @@
+
+<select name="neighborhood-list" form="neighborhoods-form" class="form-control neighborhoods-form" >
+  <% @neighborhoods.each do |neighborhood| %>
+  <option value='<%= neighborhood.name %>' ><%= neighborhood.name%></option>
+  <% end%>
+</select>
+
+<button class="btn btn-default" id="js-btn-search" type="submit">Search</button>

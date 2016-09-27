@@ -22,7 +22,7 @@ function drawRouteMap(response){
     path.push({lat: parseFloat(response[i]['lat']), lng: parseFloat(response[i]['lng'] )})
   }
 
-  drawMarkers(path);
+  drawMarkers(response);
   drawRoute(path);
   showBarsHTML(response);
 }
