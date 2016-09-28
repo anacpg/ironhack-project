@@ -1,4 +1,6 @@
 class RoutesController < ApplicationController
+  layout 'application', :except => :home
+
   def index
     @neighborhoods = Neighborhood.all
   end
@@ -12,6 +14,6 @@ class RoutesController < ApplicationController
   end
 
   def create
-    
+
   end
 end

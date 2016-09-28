@@ -1,0 +1,157 @@
+/* -----------------------------------------
+   Theme Specific Media Queries
+----------------------------------------- */
+/* -----------------------------------------
+	Desktop First
+----------------------------------------- */
+/* Medium */
+@media only screen and (max-width: 1199px) {
+  .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+/* Medium */
+@media only screen and (max-width: 991px) {
+  #mobile-bar {
+    display: block;
+  }
+
+  #page {
+    padding-top: 47px;
+  }
+
+  #header .navigation {
+    display: none;
+  }
+
+  .slide-title {
+    font-size: 42px;
+  }
+
+  #slider a.btn.slide-more {
+    margin-top: 20px;
+  }
+
+  #slider .slides li {
+    height: 600px;
+  }
+
+  .bookbtn button {
+    font-size: 11px;
+    font-weight: normal;
+  }
+
+  .widget-area-1,
+  .widget-area-2 {
+    margin-bottom: 0;
+  }
+
+  .item a.btn,
+  .item a.btn:visited {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .item .item-content {
+    margin-top: -40px;
+  }
+
+  .widget_ci_special_offer_widget .item h4 {
+    margin: 0 0 20px 0;
+  }
+  .widget_ci_special_offer_widget .item .item-content {
+    position: absolute;
+    width: 100%;
+    margin: -80px 0 0;
+    left: 0;
+    right: 0;
+    padding: 0 35px;
+    text-align: center;
+    top: 50%;
+  }
+}
+/* Extra Small */
+@media only screen and (max-width: 767px) {
+  input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+    width: 100%;
+  }
+
+  .pre-head, .lang {
+    text-align: center;
+    margin: 5px;
+  }
+
+  .logo img {
+    margin-left: 0;
+  }
+
+  #slider {
+    margin: 0 0 -240px 0;
+  }
+  #slider .slides li {
+    height: 450px;
+  }
+
+  .slide-info {
+    top: 48%;
+  }
+
+  .slide-title {
+    font-size: 36px;
+  }
+
+  .booking-wrap {
+    margin: 0;
+    height: auto;
+    padding: 25px 0 20px;
+    border-top: 2px solid #FFF;
+  }
+
+  .b-form > div, .b-form .bookbtn {
+    float: none;
+    width: 100% !important;
+    text-align: left;
+    margin: 0 0 5px 0;
+  }
+  .b-form .bookbtn {
+    text-align: center;
+  }
+  .b-form .bookbtn button {
+    width: 150px;
+    font-size: 16px;
+  }
+
+  .widget_ci_special_offer_widget .item h4 {
+    text-align: center;
+  }
+
+  #footer .navigation {
+    display: none;
+  }
+
+  .alt #slider .slides li {
+    height: 320px;
+  }
+  .alt #slider + .booking-wrap {
+    height: auto;
+    margin: 0;
+    padding-bottom: 25px;
+  }
+
+  #header .icl_languages_selector,
+  #header .widget_icl_lang_sel_widget {
+    position: static;
+  }
+}
+/* Tiny */
+/* -----------------------------------------
+	Mobile First
+----------------------------------------- */
+/* Large */
+/* Medium */
+/* Small */

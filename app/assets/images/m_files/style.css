@@ -1,0 +1,26 @@
+.ci-socials-ignited {
+  line-height: 0; }
+
+.ci-socials-ignited img {
+  max-width: none !important;
+  min-width: 0 !important; }
+
+.widget_ci_socials_ignited.widget a,
+.widget_ci_socials_ignited.widget a:visited,
+.widget_ci_socials_ignited.widget a:hover,
+.widget_ci_socials_ignited.widget a:focus {
+  transition: none;
+  border: none;
+  background: none;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 0; }
+
+/* Socials Ignited FontAwesome Styles */
+.ci-socials-ignited-fa i {
+  text-align: center;
+  display: inline-block;
+  transition: opacity 0.15s ease; }
+.ci-socials-ignited-fa a {
+  display: inline-block;
+  margin: 0 5px 5px 0; }

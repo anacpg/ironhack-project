@@ -34,6 +34,13 @@ RequestsAPI = function (){
         .then(newRoute).catch(errorNewRoute);
   }
 
+  _createBar = function(route_id, input) {
+    let query = URL_API + 'routes/'+ route_id +'/bars/create';
+    return _proxy('POST', query, 'json', JSON.stringify(input))
+        .then(addBarHtml).catch(showError);
+  }
+
+
   _proxy = function(method, url, responseType, params) {
     return new Promise(function(resolve, reject) {
       var xhr = new XMLHttpRequest();
@@ -68,6 +75,7 @@ RequestsAPI = function (){
     searchBars : _searchBars,
     searchBarRoute : _searchBarRoute,
     searchBar : _searchBar,
-    createRoute : _createRoute
+    createRoute : _createRoute,
+    createBar : _createBar
   }
 }();

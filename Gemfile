@@ -34,6 +34,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'bootswatch-rails'
 gem "animate-rails"
 gem 'cloudinary'
+gem 'paperclip-cloudinary'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

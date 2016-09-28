@@ -45,6 +45,10 @@
                  <%= file_field_tag "images", id: 'fileUpload', type: :file, multiple: true %>
                </div>
         </div>
+
+        <input name="file" type="file"
+         class="cloudinary-fileupload" data-cloudinary-field="image_id" 
+         data-form-data=" ... html-escaped JSON data ... " ></input>
         <br>
 
 

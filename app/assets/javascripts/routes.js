@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
     if (routeList)  routeList.addEventListener('click', showRoutes);
     if (barList)  barList.addEventListener('click', showBar);
+    //
+    // document.getElementsByClassName('button_to')[0]
+    //     .setAttribute('action', '/routes/new');
+
+
   }
 });
 

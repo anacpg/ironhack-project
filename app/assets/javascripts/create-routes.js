@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
   if (window.location.pathname == "/routes/new"){
-
+    changeBtn();
     document.getElementsByClassName('js-bar-form')[0].classList.add('hidden');
     document.getElementById('btn-create-route')
       .addEventListener('click', createNewRoute);
@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function(){
        deleteInputText(event);
       })
     });
+
+    // var body = document.getElementsByTagName('body')[0]
+    // // body.setAttribute('style'
+    // //   , "background-image: url(http://res.cloudinary.com/divgxbjh0/image/upload/v1475056945/madrid_wnxnxk.jpg)");
+    //
+    // body.classList.add('background-body');
   }
 })
 
@@ -26,20 +32,10 @@ function createNewRoute() {
   var route_name = document.getElementsByClassName('js-route-name')[0].value;
   geolocation();
   RequestsAPI.createRoute(route_name);
-  // var request = $.ajax({
-  //   url: '/api/routes/create',
-  //   type: 'POST',
-  //   success: newRoute,
-  //   error: errorNewRoute,
-  //   data: {route: {name: route_name}}
-  // });
-
-  //request.done(addFormBar);
-  //request.fail(showError);
 }
 
 function addFormBar (){
-  // geolocation();
+
   setupAutocomplete();
   document.getElementById('js-create-bar').classList.remove('hidden');
   document.getElementsByClassName('js-bar-form')[0].classList.remove('hidden');
@@ -99,13 +95,14 @@ function postAddBar(input) {
   var route_id = document.getElementsByClassName('route-name')[0]
         .getAttribute('id-route');
 
-  $.ajax({
-    url: '/api/routes/'+ route_id +'/bars/create',
-    type: 'POST',
-    success: addBarHtml,
-    error: showError,
-    data: input
-  });
+  RequestsAPI.createBar(route_id, input);
+  // $.ajax({
+  //   url: '/api/routes/'+ route_id +'/bars/create',
+  //   type: 'POST',
+  //   success: addBarHtml,
+  //   error: showError,
+  //   data: input
+  // });
 }
 
 function addBarHtml(response) {
@@ -121,4 +118,10 @@ function deleteInputText(event){
   event.target.value = "";
   //event.target.setAttribute('style','width:300px');
   //event.target.classList.add('shake');
+}
+
+function changeBtn() {
+  var btn = document.getElementsByClassName('button_to')[0];
+  btn.setAttribute('action', '/routes');
+  document.getElementById('js-btn-render').innerText = "View route";
 }

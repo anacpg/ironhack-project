@@ -1,0 +1,53 @@
+a, a:visited,
+.ui-datepicker-trigger:hover,
+a.btn,
+a.btn:visited,
+input[type=submit],
+button[type=submit] {
+  color: #d5372d; }
+
+a:hover {
+  color: #b12c23; }
+
+#paging a:hover,
+#paging span.current,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+.item:hover a.btn, a.btn:hover,
+input[type=submit]:hover,
+button:hover,
+#slider a.btn.slide-more:hover,
+.b-form button[type=submit]:hover,
+.dk_theme_ci.dk_open .dk_toggle,
+.dk_theme_ci .dk_options {
+  border-color: #d5372d; }
+
+#paging span.current,
+.room-slider .flex-direction-nav a,
+.sidebar .testimonial-wrap blockquote,
+.col-sm-4 .testimonial-wrap blockquote,
+.item:hover a.btn, a.btn:hover,
+input[type=submit]:hover,
+button:hover,
+.dk_theme_ci .dk_options a:hover,
+.booking-inpage,
+.room-nav a.current-room,
+.room-nav a.current-room:visited,
+.room-nav a:hover,
+.item .offer,
+.book-widget-inner {
+  background-color: #d5372d; }
+
+.room-nav a.current-room:before,
+.room-nav a.current-room:visited:before,
+.room-nav a:hover:before {
+  border-right-color: #d5372d; }

@@ -1,7 +1,7 @@
-<nav class="navbar navbar-default margin_null color-nav">
+<nav class="navbar navbar-default margin_null color-nav" style="border-radius: 4px; margin:0px !important">
   <div class="container-fluid">
-    <div class="col-sm-1 padding_null" style="padding:0px padding-right:5px">
-      <a class="brand text-white logo" href="/">bRoutes</a>
+    <div class="col-sm-1 padding_null  " style="border">
+      <a class="brand text-white logo " href="/">bRoutes</a>
     </div>
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -13,19 +13,29 @@
       <!-- <a class="navbar-brand" href="#">Brand</a> -->
     </div>
 
-    <div class="col-sm-3 padding_null" style="padding:0px padding-right:5px">
+    <div class="col-sm-4 padding_null " style="padding:0px padding-right:5px">
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left nav-select border-nav" role="search">
           <%= render :partial => "select_district", :locals => {:neighborhoods => neighborhoods} %>
         </form>
 
       </div>
     </div>
-    <div class="col-sm-3 padding_null" style="padding:0px padding-right:5px;
+    <div class="col-sm-4 padding_null" style="padding:0px padding-right:5px;
     color:white">
-      <h2 id="js-h-route"class="center" style="padding:15px"> Routes </h2>
+      <h2 id="js-h-route"class="center" style="padding:15px"> </h2>
     </div>
+
+    <div class="col-sm-1 col-md-offset-1 padding_null">
+      <!-- <button class="btn btn-default btn-new-route"
+       id="js-btn-search" type="submit">New route</button> -->
+      <form method="get" action="/routes/new" class="button_to">
+        <button class="btn btn-default btn-new-route"
+         id="js-btn-render" type="submit">New route</button>
+      </form>
+    </div>
+
   </div>
 </nav>

@@ -20,8 +20,12 @@ a {
 
 .logo {
   font-family: 'Comfortaa', cursive;
-  font-size: 24px;
+  font-size: 26px;
   color: white;
+  padding-:0px;
+  padding-top: 13px !important;
+  padding-right:20px;
+  padding-left: 10px;
 }
 
 .padding_null{
@@ -120,5 +124,56 @@ input, button, textarea{
 }
 
 .button{
-  background-color: #d6ecfa
+  background-color: #d6ecfa;
+}
+
+.nav-select{
+  margin-top:15px !important;
+  padding-left: 25px !important;
+}
+
+
+.btn-new-route{
+  margin-top:15px;
+  margin-right: 20px !important;
+  padding-left:20px !important;
+  padding-right: 20px !important;
+}
+
+.border-nav{
+  border-right-style: solid;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: white;
+}
+
+.background-div{
+  width: 100%;
+  background-image: url("http://res.cloudinary.com/divgxbjh0/image/upload/v1475056945/madrid_wnxnxk.jpg");
+
+}
+
+.background-body {
+  background-image;: url('http://res.cloudinary.com/divgxbjh0/image/upload/v1475056945/madrid_wnxnxk.jpg') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.5;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+}
+
+
+.divBackgroundImage {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.5;
 }
