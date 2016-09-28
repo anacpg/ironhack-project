@@ -3,14 +3,17 @@ document.addEventListener('DOMContentLoaded', function(){
     // request = new requestAPI() ;
     initShowRoutes('tetuán');
 
-    var routeList = document.getElementsByClassName("js-route-list")[0];
-    var barList = document.getElementById("js-bar-list");
+    ////var routeList = document.getElementsByClassName("js-route-list")[0];
+    // var barList = document.getElementById("js-bar-list");
 
     document.getElementById("js-btn-search")
        .addEventListener('click', searchNeighborhood);
 
-    if (routeList)  routeList.addEventListener('click', showRoutes);
-    if (barList)  barList.addEventListener('click', showBar);
+
+    //// if (routeList)  routeList.addEventListener('click', showRoutes);
+
+
+    // if (barList)  barList.addEventListener('click', showBar);
     //
     // document.getElementsByClassName('button_to')[0]
     //     .setAttribute('action', '/routes/new');
@@ -30,6 +33,10 @@ function initShowRoutes(neighborhood){
 
   var $neighborhood = document.getElementsByClassName('neighborhoods-form')[0];
   $neighborhood.value = neighborhood;
+
+  // document.getElementsByClassName('js-route')[0].addEventListener('click', function () {
+  //   console.log('hola');
+  // })
 }
 
 function searchNeighborhood(event){
@@ -45,12 +52,16 @@ function searchNeighborhood(event){
 
 function showRoutes(event) {
   event.preventDefault();
-  var route_id = event.target.getAttribute('id');
-  console.log('showRoutes route_id', route_id);
 
+  var route_id = event.target.getAttribute('id');
+  console.log('route_id',route_id);
   deleteMarkers();
   RequestsAPI.searchBarRoute(route_id).then(drawRouteMap);
-  //request.requestBarRoute(route_id);
+  var bars_html = event.currentTarget.getElementsByTagName('li');
+
+  for(var i=0; i<bars_html.legth; i++){
+    bars[html].addListener('click', showBar);
+  }
   updateZoom(14);
 }
 

@@ -1,6 +1,5 @@
 function showRoutesHtml(routes){
   var html = '';
-  // var routesSection = document.getElementById('js-route-list');
   var routesSection = document.getElementById('accordion');
 
   if (routes.length === 0){
@@ -10,8 +9,16 @@ function showRoutesHtml(routes){
     html = buildRouteListHtml(routes);
   }
   routesSection.innerHTML = html;
-  // routesSection.insertAdjacentHTML('beforeend', html);
-  //$routesSection.append(html);
+  addEventRoute();
+}
+
+function addEventRoute() {
+  var divRoutes = document.getElementsByClassName('panel-heading');
+  for (var i = 0; i < divRoutes.length ; i++) {
+    divRoutes[i].addEventListener('click', function(){
+      showRoutes(event);
+    });
+  }
 }
 
 function showError(err){
@@ -34,12 +41,25 @@ function showBarsHTML(bars){
   var route = `js-panel-${bars[0]['route_id']}`;
   var barsSection = document.getElementById(route);
 
-  // barsSection.classList.remove('hidden');
   if (bars.length === 0){
     console.log('No hay bares');
   }else{
     html = buildBarListHtml(bars);
   }
-  // barsSection.insertAdjacentHTML('beforeend', html);
   barsSection.innerHTML = html;
+
+  addEventBar();
+}
+
+function addEventBar() {
+  var panelBody = document.getElementsByClassName('panel-body');
+  for (var j = 0; j < panelBody.length; j++) {
+    var liBars = panelBody[j].getElementsByClassName('li-bar');
+    for (var i = 0; i < liBars.length ; i++) {
+      liBars[i].addEventListener('click', function(){
+        showBar(event);
+      });
+    }
+  }
+
 }

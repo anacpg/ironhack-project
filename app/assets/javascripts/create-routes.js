@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function(){
   if (window.location.pathname == "/routes/new"){
     changeBtn();
@@ -17,12 +18,6 @@ document.addEventListener('DOMContentLoaded', function(){
        deleteInputText(event);
       })
     });
-
-    // var body = document.getElementsByTagName('body')[0]
-    // // body.setAttribute('style'
-    // //   , "background-image: url(http://res.cloudinary.com/divgxbjh0/image/upload/v1475056945/madrid_wnxnxk.jpg)");
-    //
-    // body.classList.add('background-body');
   }
 })
 
@@ -81,6 +76,11 @@ function getBarInput(){
         lng: markers[0].getPosition().lng() },
         image : "http://res.cloudinary.com/divgxbjh0/image/upload/v1474971344/bar1_w29aac.jpg"
     };
+
+
+
+
+
     postAddBar(input);
   }
 }
@@ -96,13 +96,9 @@ function postAddBar(input) {
         .getAttribute('id-route');
 
   RequestsAPI.createBar(route_id, input);
-  // $.ajax({
-  //   url: '/api/routes/'+ route_id +'/bars/create',
-  //   type: 'POST',
-  //   success: addBarHtml,
-  //   error: showError,
-  //   data: input
-  // });
+
+  var im = document.getElementsByClassName('cloudinary-fileupload')[0];
+  console.log('im', im);
 }
 
 function addBarHtml(response) {

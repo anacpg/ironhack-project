@@ -13,7 +13,7 @@ function drawMarkers(path){
 
 
 function createMarker(myLatLng, bar) {
-  map.setCenter();
+  window.map.setCenter();
   var id;
   bar ? id = String(bar.id) : id = '1';
 

@@ -16,6 +16,8 @@ function buildRouteHtml(route){
       </div>
       <div id="collapse${route.id}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="route-${route.id}">
         <div class="panel-body" id="js-panel-${route.id}">
+          <ul id="js-list-bar">
+          </ul>
         </div>
       </div>
     </div>

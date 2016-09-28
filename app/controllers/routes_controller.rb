@@ -6,6 +6,7 @@ class RoutesController < ApplicationController
   end
 
   def home
+    render layout:false
   end
 
   def new
