@@ -4,6 +4,8 @@ function showRoutesHtml(routes){
 
   if (routes.length === 0){
     routesSection.classList.add('hidden');
+    document.getElementsByClassName('alert-warning')[0]
+        .classList.remove('hidden');
   }else{
     routesSection.classList.remove('hidden');
     html = buildRouteListHtml(routes);

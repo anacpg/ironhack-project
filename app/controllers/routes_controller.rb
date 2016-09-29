@@ -6,6 +6,7 @@ class RoutesController < ApplicationController
   end
 
   def home
+    @neighborhoods = Neighborhood.all
     render layout:false
   end
 

@@ -10,54 +10,14 @@
       <h2 class="route-name hidden" id-route="">Route: </h2>
     </div>
 
-    <div class="col-sm-3" style="width:35%">
+    <div class="col-sm-3" style="width:40%">
       <div class="js-bar-form">
+        <%= render 'form_bar'  %>
 
-        <%= form_tag("/create", method: "post") do %>
-        <h3>Add a bar</h3>
-        <br>
-        <%= label_tag(:beeper, "Search a bar:") %>
-        <input type="text" name="search-bar" id="js-search-bar" style="width:300px">
-
-        <br>
-        <%= label_tag(:bar_, "Bar name:") %>
-        <input type="text" name="bar-name" id="js-bar-name" style="width:300px">
-        <br>
-        <%= label_tag(:bar_description, "Bar description:") %>
-
-        <textarea name="bar_description" rows="2" id="js-bar-description"
-        cols="40"></textarea>
-        <br>
-        <%= label_tag(:district_bar, "District:") %>
-
-
-        <select name="neighborhood-list" form="form-districts-bar" class="form-districts-bar" disabled>
-          <% @neighborhoods.each do |neighborhood| %>
-          <option value='<%= neighborhood.id %>' id='<%= neighborhood.name %>' ><%= neighborhood.name%></option>
-          <% end%>
-        </select>
-        <br>
-        <div class="row">
-               <div class="col-md-2">
-                 <small> Imágenes </small>
-               </div>
-               <div class="col-md-8">
-                 <%= file_field_tag "images", id: 'fileUpload', type: :file, multiple: true %>
-               </div>
-        </div>
-
-        <input name="file" type="file"
-         class="cloudinary-fileupload" id="uploadinput" data-cloudinary-field="image_id" 
-         data-form-data=" ... html-escaped JSON data ... " ></input>
-        <br>
-
-
-        <button class="btn btn-default" id="btn-add-bar" type="submit">Create Route</button>
-        <% end %>
       </div>
 
     </div>
-    <div class="col-sm-9 js-create-bar" style="background-color:aliceblue; width:65%">
+    <div class="col-sm-9 js-create-bar" style="background-color:aliceblue; width:60%">
       <div class="js-bar-map hidden">
         <h5>Select bar position:</h5>
         <div id="map" style="height: 70vh;">  </div>
@@ -65,14 +25,10 @@
     </div>
   </div>
   <div class="col-sm-3 padding_null " >
+
         <div class="mygrid-wrapper-div " id="js-bar-list">
           <ul class="js-ul-bars hidden"> </ul>
         </div><!--/.well -->
   </div>
-
-
-
-
-
 
 </div>

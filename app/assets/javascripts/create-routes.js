@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function(){
        deleteInputText(event);
       })
     });
+    console.log('body', document.getElementsByTagName('body')[0]);
+    document.getElementsByTagName('body')[0].classList.add('body-background')
   }
 })
 
@@ -41,6 +43,8 @@ function addFormBar (){
 }
 
 function newRoute(response){
+  document.getElementsByTagName('body')[0].classList.remove('body-background')
+
   addFormBar();
   document.getElementsByClassName('div-create-route')[0].classList.add('hidden');
   var js_route = document.getElementsByClassName('route-name')[0];

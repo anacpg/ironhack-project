@@ -40,7 +40,11 @@ a {
   background-color: #f15c5c !important;
 }
 
-
+.main-nav{
+  border-radius: 4px;
+  margin:0px !important;
+  opacity: 0.9 !important;
+}
 
 .nav{
     max-height: 300px;
@@ -176,4 +180,13 @@ input, button, textarea{
     background-repeat: no-repeat;
     z-index: -1;
     opacity: 0.5;
+}
+
+
+.body-background{
+  background: url("http://res.cloudinary.com/divgxbjh0/image/upload/v1475099010/madrid__mvgf4c.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
 }

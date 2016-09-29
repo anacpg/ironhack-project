@@ -1,6 +1,5 @@
 function buildBarHtml(bar) {
-  // add --> buildImage(bar)
-  return `<li class="li-bar" id="${bar.id}"> ${buildLink(bar)} ${buildImage(bar)}<br> </li>`
+  return `<li class="li-bar list-group-item" id="${bar.id}"> ${buildLink(bar)} ${buildImage(bar)}<br> </li>`
 }
 
 function buildBarDescriptionHtml(bar) {
@@ -9,12 +8,10 @@ function buildBarDescriptionHtml(bar) {
 
 
 function buildLink(bar) {
-  // return `<h5> ${bar.name}</h5>`
       return `<a href="#" class="js-bar-li"
           bar-id=" ${bar.id}"> ${bar.name} </a>`
 }
 
 function buildImage(bar) {
-  // return '<img src="' + bar.image + '"><br>'
-  return `<img class="js-bar-img" src="${bar.image}" width="200"><br>`
+  return `<img class="js-bar-img" src="${bar.image}" width="150"><br>`
 }
